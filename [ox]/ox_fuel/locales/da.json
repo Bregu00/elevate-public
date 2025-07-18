@@ -1,0 +1,23 @@
+{
+	"tank_full": "Tanken på dette køretøj er fuld",
+	"petrolcan_cannot_afford": "Du har ikke råd til en benzindunk",
+	"refuel_cannot_afford": "Du har ikke råd til at tanke dit køretøj",
+	"recharge_cannot_afford": "Du har ikke råd til at recharger dit køretøj",
+	"vehicle_far": "Dit køretøj er for langt væk",
+	"pump_fuel_with_can": "Læg din dunk væk, før du tanker med pumpen",
+	"fuel_help": "Tryk på ~INPUT_C2939D45~ for at tanke",
+	"petrolcan_help": "Tryk på ~INPUT_C2939D45~ for at købe eller genopfylde en benzindunk",
+	"leave_vehicle": "Forlad køretøjet for at kunne begynde at tanke",
+	"start_fueling": "Begynd at tanke",
+	"start_charging": "Begynd at lade",
+	"petrolcan_buy_or_refill": "Køb eller genopfyld en benzindunk",
+	"fuel_station_blip": "Tankstation",
+	"not_enough_money": "Ikke nok penge! Mangler $%s",
+	"fuel_success": "Tanket op til %s - $%s",
+	"petrolcan_refill": "Betalt $%s for at genopfylde din benzindunk",
+	"petrolcan_buy": "Betalt $%s for en benzindunk",
+	"petrolcan_cannot_carry": "Du kan ikke bære denne benzindunk",
+	"petrolcan_not_enough_fuel": "Din benzindunk har ikke nok brændstof",
+	"petrolcan_not_equipped": "Du skal udstyre din benzindunk",
+	"vehicle_not_fuelable": "Dette køretøj kan ikke tankes her"
+}

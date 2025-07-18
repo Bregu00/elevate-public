@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Vehicle Handling Editor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Add styles directly in HTML for testing -->
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            color: #ffffff;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #container {
+            position: absolute;
+            left: 2vw;
+            top: 2vh;
+            max-height: 96vh;
+            width: 450px;
+            background-color: rgba(28, 28, 35, 0.95);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            display: none;
+            flex-direction: column;
+        }
+
+        /* When container is shown, use flex display */
+        #container.show {
+            display: flex;
+        }
+
+        .header {
+            background: #1e2127;
+            padding: 15px;
+            border-bottom: 1px solid #383838;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .categories {
+            padding: 10px;
+            overflow-y: auto;
+            max-height: calc(96vh - 60px); /* Subtract header height */
+        }
+
+        .category {
+            margin-bottom: 15px;
+            background: rgba(40, 40, 48, 0.6);
+            border-radius: 6px;
+        }
+
+        .category-header {
+            padding: 12px 15px;
+            background: rgba(60, 60, 70, 0.6);
+            font-weight: 500;
+            border-radius: 6px 6px 0 0;
+        }
+
+        .category-content {
+            padding: 10px;
+        }
+
+        .handling-item {
+            display: flex;
+            align-items: center;
+            padding: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .handling-label {
+            flex: 1;
+            position: relative;
+        }
+
+        .handling-name {
+            font-weight: 500;
+        }
+
+        .handling-description {
+            display: none;
+            position: absolute;
+            background: rgba(0,0,0,0.9);
+            padding: 8px;
+            border-radius: 4px;
+            width: 200px;
+            z-index: 1000;
+            font-size: 12px;
+            color: #aaa;
+        }
+
+        .handling-label:hover .handling-description {
+            display: block;
+        }
+
+        .handling-controls {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .input {
+            background-color: rgba(30, 30, 35, 0.6);
+            border: 1px solid #383838;
+            border-radius: 4px;
+            color: white;
+            padding: 5px 8px;
+            width: 80px;
+            text-align: right;
+            font-size: 13px;
+            transition: all 0.2s;
+        }
+
+        .input:hover {
+            border-color: #4a4a4a;
+            background-color: rgba(40, 40, 45, 0.8);
+        }
+
+        .input:focus {
+            outline: none;
+            border-color: #4CAF50;
+            background-color: rgba(40, 40, 45, 0.9);
+        }
+
+        .button {
+            background: rgba(60, 60, 70, 0.6);
+            border: none;
+            border-radius: 4px;
+            color: white;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+        }
+
+        .header-buttons {
+            position: absolute;
+            top: 12px;
+            right: 15px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .import-btn, .export-btn {
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            color: white;
+            transition: background 0.2s;
+        }
+
+        .import-btn {
+            background: #2196F3;
+        }
+
+        .import-btn:hover {
+            background: #1976D2;
+        }
+
+        .export-btn {
+            background: #4CAF50;
+        }
+
+        .export-btn:hover {
+            background: #45a049;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.1);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.2);
+            border-radius: 3px;
+        }
+
+        .dialog {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dialog.show {
+            display: flex;
+        }
+
+        .dialog-content {
+            background: rgba(28, 28, 35, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            width: 500px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        .dialog-content h2 {
+            margin: 0 0 15px 0;
+            font-size: 18px;
+            color: white;
+        }
+
+        #import-data {
+            width: 100%;
+            height: 200px;
+            background: rgba(20, 20, 25, 0.8);
+            border: 1px solid #383838;
+            border-radius: 4px;
+            color: white;
+            padding: 10px;
+            font-family: monospace;
+            font-size: 12px;
+            resize: vertical;
+            margin-bottom: 15px;
+        }
+
+        #import-data:focus {
+            outline: none;
+            border-color: #2196F3;
+        }
+
+        .dialog-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .dialog-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .apply-btn {
+            background: #2196F3;
+            color: white;
+        }
+
+        .apply-btn:hover {
+            background: #1976D2;
+        }
+
+        .cancel-btn {
+            background: #666;
+            color: white;
+        }
+
+        .cancel-btn:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="header">
+            <h1>Vehicle Handling Editor</h1>
+            <div class="header-buttons">
+                <div class="import-btn" onclick="Import()">Import</div>
+                <div class="export-btn" onclick="Export()">Export</div>
+            </div>
+        </div>
+        <div class="categories">
+            <!-- Content will be generated by JavaScript -->
+        </div>
+    </div>
+    <div id="import-dialog" class="dialog">
+        <div class="dialog-content">
+            <h2>Import Handling Data</h2>
+            <textarea id="import-data" placeholder="Paste handling data here..."></textarea>
+            <div class="dialog-buttons">
+                <button class="dialog-btn apply-btn" onclick="ApplyImport()">Apply</button>
+                <button class="dialog-btn cancel-btn" onclick="CloseImportDialog()">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

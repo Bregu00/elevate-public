@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fwClipSetManager>
+    <clipSets>
+    <Item type="fwClipSet" key="anim@melee@colbaton@holster">
+      <fallbackId>melee@holster</fallbackId>
+      <clipDictionaryName>anim@melee@colbaton@holster</clipDictionaryName>
+      <clipItems />
+      <moveNetworkFlags />
+    </Item>
+    </clipSets>
+    <clipDictionaryMetadatas>
+    <Item key="anim@melee@colbaton@holster">
+      <streamingPolicy>SP_STREAMING</streamingPolicy>
+      <memoryGroup>MG_Melee</memoryGroup>
+      <streamingPriority>SP_Medium</streamingPriority>
+    </Item>
+    </clipDictionaryMetadatas>
+</fwClipSetManager>

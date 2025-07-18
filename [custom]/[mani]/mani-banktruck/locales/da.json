@@ -1,0 +1,36 @@
+{
+    "Target": {
+        "OfficeEntrance": "Bryd ind i kontoret",
+        "OfficeExit": "Forlad kontoret",
+        "OfficeComputer": "Hack computeren",
+        "OfficeDocument": "Tag dokument",
+        "SetupLandmine": "Placer landmine",
+        "RemoveLandmine": "Fjern landmine",
+        "PickupLandmine": "Tag landmine",
+        "PlantC4": "Placer C4",
+        "LootTruck": "Røv banktruck"
+    },
+    "ProgressBar": {
+        "PlantingLandmine": "Placerer landmine",
+        "RemovingLandmine": "Fjerner landmine",
+        "PlantingC4": "Placerer C4",
+        "LootingBanktruck": "Røver banktruck"
+    },
+    "Notify": {
+        "SomethingWentWrong": "Noget gik galt",
+        "AlreadyLooted": "Dette er allerede røvet",
+        "NotEnoughCops": "Ikke nok betjente",
+        "ExpiredDrivingPlan": "Køreplanen er udløbet",
+        "Cooldown": "Nogen har for nylig gjort dette",
+        "EnteredOffice": "Heistet er enten aktivt eller er blevet afsluttet",
+        "EnteredOfficeSuccess": "Find dokumenterne og hack computeren"
+    },
+    "UiText": {
+        "DropLandmine": "[CTRL] Drop Landmine"
+    },
+    "Alert": {
+        "Requires": "Dette røveri kræver:",
+        "Requirements": "Landmine  \n C4 Bombe"
+    },
+    "ExpiresAt": "Udløber den"
+}

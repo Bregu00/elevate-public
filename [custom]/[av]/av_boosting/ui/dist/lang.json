@@ -1,0 +1,71 @@
+{
+  "crypto": "CRPTO",
+  "vehicle": "Vehicle",
+  "plates": "Plates",
+  "expires": "Expires In",
+  "started": "Started",
+  "price": "Price",
+  "cancel": "Cancel",
+  "confirm": "Confirm",
+  "playerId": "PlayerID",
+  "owner": "Owner",
+  "username": "Username",
+  "photo": "Photo",
+  "photo_url": "Use a valid URL",
+  "tabs": {
+    "contracts": "Contracts",
+    "groups": "Groups",
+    "auctions": "Auctions",
+    "leaderboard": "Leaderboard"
+  },
+  "header": {
+    "deliveries": "Deliveries",
+    "hacked": "Hacked",
+    "best_time": "Best Time",
+    "join_queue": "Join Queue",
+    "exit_queue": "Waiting for contracts...",
+    "profile": "Profile"
+  },
+  "contracts": {
+    "empty": "No Contracts...",
+    "start_button": "Start",
+    "transfer_button": "Transfer",
+    "auction_button": "Auction",
+    "delete_button": "Delete",
+    "start_header": "Start Contract",
+    "normal_delivery": "Normal Delivery",
+    "normal_description": "Deliver the vehicle to the marked location and receive %s %s as payment.",
+    "vin_delivery": "Vin Scratch",
+    "vin_description": "Pay %s %s to be able to vin scratch the vehicle and keep it.",
+    "transfer_header": "Transfer Contract",
+    "transfer_description": "Transfer this contract to another player by using his Player ID.",
+    "auction_header": "Auction Contract",
+    "auction_description": "Put the contract out for auction, place the minimum bid that you expect to receive. If no one bids we will send you the contract back.",
+    "min_bid": "Min Bid",
+    "mark_delivered": "Mark as delivered"
+  },
+  "groups": {
+    "search": "Search Group...",
+    "create_button": "Create Group",
+    "leave_button": "Leave Group",
+    "delete_button": "Delete Group",
+    "create_header": "Create Group",
+    "group_name": "Group Name",
+    "group_password": "Group Password",
+    "join_group": "Join Group"
+  },
+  "auctions": {
+    "bid_button": "Place Bid",
+    "bid_header": "Place Bid",
+    "bid_amount": "Amount",
+    "empty": "No Auctions..."
+  },
+  "leaderboard": {
+    "search": "Search...",
+    "name": "Name",
+    "exp": "EXP",
+    "hacks": "Hacks",
+    "deliveries": "Deliveries",
+    "best_time": "Best Time"
+  }
+}

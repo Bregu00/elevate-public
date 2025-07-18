@@ -1,0 +1,38 @@
+{
+    "Notify": {
+        "AlreadyWearing": "Du har redan på dig %s",
+        "DoesntHaveJob": "Du har inte rätt jobb för att använda %s",
+        "NotWearing": "Du har ingen rustning på dig",
+        "MaxPlates": "Du kan bara ha %s plattor på dig",
+        "MaxHealth": "Din plattbärare kan inte passa denna rustning",
+        "NoPlates": "Du har inga plattor att ta bort",
+        "NoPlateItems": "Du har inga plattor",
+        "AlreadyDoingSomething": "Du gör redan något",
+        "SomethingWentWrong": "Något gick fel",
+        "NotEnoughMoney": "Du har inte tillräckligt med pengar",
+        "Canceled": "Avbruten",
+        "NoBrokenPlates": "Det finns inga trasiga plattor"
+    },
+    "Keybinds": {
+        "RemovePlatesName": "Ta bort rustningsplattor",
+        "RemovePlatesDesc": "Ta bort rustningsplattor från din plattbärare",
+        "RemoveVestName": "Ta bort plattbärare",
+        "RemoveVestDesc": "Ta av din plattbärare",
+        "EquipPlateName": "Utrusta rustningsplatta",
+        "EquipPlateDesc": "Utrusta bästa tillgängliga platta"
+    },
+    "ProgressBar": {
+        "PuttingOn": "Tar på %s",
+        "TakingOff": "Tar av %s",
+        "Equipping": "Utrustar %s",
+        "RemovePlates": "Tar bort rustningsplattor"
+    },
+    "NPC": {
+        "label1": "Sätt in rustningsplattor",
+        "icon1": "fa-solid fa-hand-holding",
+        "label2": "Reparera plattor",
+        "icon2": "fa-solid fa-screwdriver-wrench",
+        "title": "Är du säker?",
+        "underTitle": "Pris: %s SEK"
+    }
+}

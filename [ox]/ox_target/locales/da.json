@@ -1,0 +1,17 @@
+{
+  "toggle_front_driver_door": "Åben forreste førerdør",
+  "toggle_front_passenger_door": "Åben forreste passagerdør",
+  "toggle_rear_driver_door": "Åben bageste førerdør",
+  "toggle_rear_passenger_door": "Åben bageste passagerdør",
+  "toggle_hood": "Åben motorhjelm",
+  "toggle_trunk": "Åben bagagerum",
+  "debug_box": "(Debug) Boks",
+  "debug_sphere": "(Debug) Kugle",
+  "debug_police_car": "Politibil",
+  "debug_ped": "(Debug) Person",
+  "debug_vehicle": "(Debug) Køretøj",
+  "debug_object": "(Debug) Objekt",
+  "debug_global": "(Debug) Global",
+  "toggle_targeting": "Åben målretning",
+  "go_back": "Gå tilbage"
+}

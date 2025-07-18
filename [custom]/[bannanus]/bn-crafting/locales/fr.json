@@ -1,0 +1,23 @@
+{
+    "error": {
+      "missing_level": "Vous n'avez pas le niveau requis pour fabriquer cet objet.",
+      "missing_ingredients": "Matériaux requis manquants.",
+      "cannot_carry": "Vous ne pouvez pas porter plus de cet objet.",
+      "crafting_cancelled": "Fabrication annulée"
+    },
+    "success": {
+      "crafted_item": "Vous avez fabriqué avec succès {amount}x {item}."
+    },
+    "ui": {
+      "title": "Interface de Fabrication",
+      "craft_button": "Fabriquer l'objet",
+      "required_materials": "Matériaux Requis",
+      "quantity": "Quantité",
+      "set_max": "Définir le Max",
+      "missing_materials": "Matériaux Manquants",
+      "required": "Requis",
+      "level_required": "Niveau Requis",
+      "select_item": "Sélectionnez un objet pour voir les détails"
+    }
+}
+  

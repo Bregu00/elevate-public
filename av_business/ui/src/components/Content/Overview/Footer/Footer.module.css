@@ -1,0 +1,28 @@
+.root {
+    display: flex;
+    padding: calc(var(--mantine-spacing-xs) * 1.5);
+    border-radius: var(--mantine-radius-md);
+
+    @media (max-width: --mantine-breakpoint-sm) {
+        flex-direction: column;
+    }
+}
+
+.stat {
+    flex: 1;
+
+    &+& {
+        padding-left: var(--mantine-spacing-xs);
+        margin-left: var(--mantine-spacing-xs);
+        border-left: rem(1px) solid var(--mantine-color-blue-3);
+
+        @media (max-width: --mantine-breakpoint-sm) {
+            padding-left: 0;
+            margin-left: 0;
+            border-left: 0;
+            padding-top: var(--mantine-spacing-xs);
+            margin-top: var(--mantine-spacing-xs);
+            border-top: rem(1px) solid var(--mantine-color-blue-3);
+        }
+    }
+}

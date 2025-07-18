@@ -1,0 +1,112 @@
+@font-face {
+  font-family: "Satoshi Variable";
+  src: url("../../fonts/Satoshi-Variable.ttf") format("truetype");
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  overflow: auto;
+}
+
+.card {
+  position: relative;
+  background-color: var(--mantine-color-body);
+}
+
+.status {
+  position: absolute;
+  top: var(--mantine-spacing-xs);
+  right: rem(12px);
+  pointer-events: none;
+  font-size: 8px;
+}
+
+.title {
+  display: block;
+  margin-top: var(--mantine-spacing-md);
+}
+
+.name {
+  color: white;
+  font-family: "Satoshi Variable";
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.text {
+  color: rgba(237, 237, 237, 0.9);
+  font-family: "Satoshi Variable";
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.input {
+  border: solid 1px rgba(255, 255, 255, 0.1);
+}
+
+.input:focus {
+  border: solid 1px rgba(255, 255, 255, 0.1);
+}
+
+.location {
+  font-family: "Satoshi Variable";
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.button {
+  font-family: "Satoshi Variable";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13.8008px;
+  line-height: 19px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.divider {
+  display: flex;
+  background: linear-gradient(
+    0deg,
+    rgba(15, 15, 15, 1) 0%,
+    rgba(78, 78, 78, 0.5) 20%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(78, 78, 78, 0.5) 80%,
+    rgba(15, 15, 15, 1) 100%
+  );
+  width: 2.25px; /* Adjust width as needed */
+  height: 100%;
+}
+
+@media (min-height: 500px) {
+  .content {
+    height: 90%;
+  }
+}
+
+@media (min-height: 750px) {
+  .content {
+    height: 95%;
+  }
+}
+
+@media (min-height: 800px) {
+  .content {
+    height: 95%;
+  }
+}
+
+@media (min-height: 950px) {
+  .content {
+    height: 95%;
+  }
+}

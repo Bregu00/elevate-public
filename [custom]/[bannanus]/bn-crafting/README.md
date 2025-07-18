@@ -1,0 +1,1 @@
+For installation guide, and additonal information, check out the documentation here: https://bnscripts.gitbook.io/

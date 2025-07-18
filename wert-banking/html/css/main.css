@@ -1,0 +1,615 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+    overflow: hidden;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --primary: #3498db;
+    --primary-dark: #2980b9;
+    --secondary: #00b3b3;
+    --text: #e0e0e0;
+    --text-light: #a0a0a0;
+    --background: rgba(30, 39, 46, 0.92);
+    --card: rgba(40, 49, 56, 0.95);
+    --border: #3d4852;
+    --success: #00b894;
+    --danger: #e74c3c;
+    --warning: #f39c12;
+    --transfer: #3498db;
+    --input-bg: rgba(50, 59, 66, 0.8);
+}
+
+/* Main container */
+#app {
+    display: none;
+    position: absolute;
+    background-color: var(--background);
+    width: 70vh;
+    height: 55vh;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1vh;
+    overflow: hidden;
+    box-shadow: 0 1vh 3vh rgba(0, 0, 0, 0.2);
+}
+
+/* Header */
+.bank-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+    padding: 1.2vh;
+    color: white;
+}
+
+.bank-logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+}
+
+.logo-accent {
+    color: var(--secondary);
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 3vh;
+}
+
+.user-name {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.wallet-balance {
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+/* Main content */
+.bank-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    height: calc(55vh - 4.4vh);
+}
+
+/* Left panel */
+.left-panel {
+    background: var(--card);
+    padding: 2vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+/* Card */
+.bank-card {
+    background: linear-gradient(135deg, #2c3e50, #1a2530);
+    height: 18vh;
+    width: 90%;
+    max-width: 28vh;
+    border-radius: 1.2vh;
+    padding: 1.5vh;
+    position: relative;
+    box-shadow: 0 0.8vh 2vh rgba(0, 0, 0, 0.25);
+    margin-bottom: 2vh;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Add decorative elements to the card */
+.bank-card::before {
+    content: '';
+    position: absolute;
+    top: -10vh;
+    right: -10vh;
+    width: 25vh;
+    height: 25vh;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.bank-card::after {
+    content: '';
+    position: absolute;
+    bottom: -8vh;
+    left: -8vh;
+    width: 20vh;
+    height: 20vh;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.card-chip {
+    position: absolute;
+    top: 1.5vh;
+    left: 1.5vh;
+    width: 3.5vh;
+    height: 2.8vh;
+    z-index: 1;
+}
+
+.card-logo {
+    position: absolute;
+    top: 1.5vh;
+    right: 1.5vh;
+    width: 5vh;
+    height: 1.6vh;
+    z-index: 1;
+}
+
+.card-number {
+    position: relative;
+    color: white;
+    font-size: 1rem;
+    letter-spacing: 0.15vh;
+    font-weight: 500;
+    margin-top: 4vh;
+    z-index: 1;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.card-balance {
+    position: relative;
+    z-index: 1;
+    margin-top: 0.8vh;
+}
+
+.card-balance-label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.75rem;
+    margin-bottom: 0.2vh;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+}
+
+.card-balance-amount {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.card-expiry {
+    position: relative;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.75rem;
+    margin-top: 0.6vh;
+    z-index: 1;
+}
+
+/* Remove the separate balance container since it's now in the card */
+.balance-container {
+    display: none;
+}
+
+/* Operations */
+.operations-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.operation-row {
+    margin-bottom: 1.5vh;
+}
+
+.operation-input {
+    display: flex;
+    align-items: center;
+}
+
+/* Improved form inputs with borders and backdrop */
+.form-input {
+    flex-grow: 1;
+    padding: 1.2vh;
+    border: 1px solid var(--border);
+    border-radius: 0.6vh;
+    background: var(--input-bg);
+    color: var(--text);
+    font-size: 0.9rem;
+    transition: all 0.2s;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.form-input:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.1), inset 0 1px 3px rgba(0, 0, 0, 0.05);
+    background: rgba(60, 69, 76, 0.9);
+}
+
+.form-input::placeholder {
+    color: var(--text-light);
+}
+
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1vh;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 0.6vh;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-left: 0.8vh;
+    white-space: nowrap;
+}
+
+.action-btn:hover {
+    background: var(--primary-dark);
+}
+
+.action-btn i {
+    margin-right: 0.5vh;
+}
+
+.deposit-btn {
+    background: var(--success);
+}
+
+.withdraw-btn {
+    background: var(--danger);
+}
+
+.transfer-btn {
+    background: var(--primary);
+}
+
+.transfer-btn:hover {
+    background: var(--primary-dark);
+}
+
+/* Deposit all button */
+.deposit-all-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 184, 148, 0.1);
+    color: var(--success);
+    border-radius: 0.6vh;
+    padding: 1vh;
+    margin-bottom: 1.5vh;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.deposit-all-btn:hover {
+    background: rgba(0, 184, 148, 0.2);
+}
+
+.deposit-all-btn i {
+    margin-right: 0.8vh;
+}
+
+/* Transfer section */
+.transfer-section {
+    border-top: 1px solid var(--border);
+    padding-top: 1.2vh;
+    margin-top: 0.5vh;
+}
+
+/* Improve section title styling */
+.section-title {
+    color: var(--text);
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 2vh 0 1.5vh 0;
+    padding-bottom: 0.8vh;
+    border-bottom: 1px solid var(--border);
+}
+
+/* Right panel - Transaction history */
+.right-panel {
+    background: rgba(35, 44, 51, 0.9);
+    padding: 2vh;
+    border-left: 1px solid var(--border);
+    overflow-y: auto;
+}
+
+.transaction-history {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.history-title {
+    color: var(--text);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1.2vh;
+    display: flex;
+    align-items: center;
+}
+
+.history-title i {
+    margin-right: 0.8vh;
+    color: var(--primary);
+}
+
+.history-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    max-height: calc(100% - 4vh);
+}
+
+.transaction-item {
+    display: flex;
+    align-items: center;
+    background: var(--card);
+    border-radius: 0.6vh;
+    padding: 0.8vh;
+    margin-bottom: 1vh;
+    box-shadow: 0 0.1vh 0.3vh rgba(0, 0, 0, 0.05);
+    transition: all 0.2s;
+    border-left: 3px solid transparent;
+}
+
+.transaction-item:hover {
+    transform: translateY(-0.2vh);
+    box-shadow: 0 0.3vh 0.6vh rgba(0, 0, 0, 0.1);
+    background: rgba(50, 59, 66, 0.95);
+}
+
+.transaction-icon {
+    width: 2.5vh;
+    height: 2.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 1vh;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.withdraw-tx {
+    background: rgba(231, 76, 60, 0.15);
+    color: var(--danger);
+}
+
+.deposit-tx {
+    background: rgba(0, 184, 148, 0.15);
+    color: var(--success);
+}
+
+.transfer-tx {
+    background: rgba(52, 152, 219, 0.15);
+    color: var(--primary);
+}
+
+.transaction-details {
+    flex-grow: 1;
+}
+
+.transaction-type {
+    color: var(--text);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.transaction-date {
+    color: var(--text-light);
+    font-size: 0.7rem;
+}
+
+.transaction-amount {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.amount-positive {
+    color: var(--success);
+}
+
+.amount-negative {
+    color: var(--danger);
+}
+
+/* Exit button */
+#exit {
+    position: absolute;
+    right: 1.2vh;
+    top: 1.2vh;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0.8;
+    transition: all 0.2s;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 2.2vh;
+    height: 2.2vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+#exit:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Notification */
+.notification {
+    position: fixed;
+    bottom: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--card);
+    border-radius: 0.6vh;
+    padding: 1vh 1.5vh;
+    box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.2);
+    display: none;
+    align-items: center;
+    max-width: 40vh;
+    z-index: 1000;
+    color: var(--text);
+}
+
+.notification.error {
+    border-left-color: var(--danger);
+}
+
+.notification.success {
+    border-left-color: var(--success);
+}
+
+.notification-icon {
+    margin-right: 0.8vh;
+    color: var(--primary);
+}
+
+.notification.error .notification-icon {
+    color: var(--danger);
+}
+
+.notification.success .notification-icon {
+    color: var(--success);
+}
+
+.notification-message {
+    color: var(--text);
+    font-size: 0.8rem;
+}
+
+/* Responsive adjustments */
+@media (max-height: 800px) {
+    #app {
+        height: 50vh;
+    }
+    
+    .bank-content {
+        height: calc(50vh - 4.4vh);
+    }
+    
+    .bank-card {
+        height: 16vh;
+    }
+    
+    .card-number {
+        margin-top: 3vh;
+    }
+    
+    .card-balance-amount {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-height: 700px) {
+    #app {
+        height: 45vh;
+    }
+    
+    .bank-content {
+        height: calc(45vh - 4.4vh);
+    }
+    
+    .bank-card {
+        height: 14vh;
+    }
+    
+    .card-number {
+        margin-top: 2.5vh;
+        font-size: 0.9rem;
+    }
+    
+    .card-balance-amount {
+        font-size: 1.1rem;
+    }
+}
+
+/* Fix for the bildirim class which is used in the original code */
+.bildirim {
+    display: none; /* Hide the old notification style */
+}
+
+/* Make sure the hepsiniyatir class works with our new deposit-all-btn */
+.hepsiniyatir {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--success);
+    color: white;
+    border-radius: 0.6vh;
+    padding: 1.2vh;
+    margin-bottom: 2vh;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hepsiniyatir:hover {
+    background: #00a382; /* Darker shade of success color */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.hepsiniyatir:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hepsiniyatir i {
+    margin-right: 0.8vh;
+    font-size: 1rem;
+}
+
+/* Make sure our notification works with the original WertNotif function */
+#notification {
+    display: none;
+}
+
+/* No transactions message */
+.no-transactions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2vh;
+    color: var(--text-light);
+    text-align: center;
+}
+
+.no-transactions i {
+    font-size: 2rem;
+    margin-bottom: 1vh;
+    opacity: 0.5;
+}
+
+.no-transactions p {
+    font-size: 0.9rem;
+}
+

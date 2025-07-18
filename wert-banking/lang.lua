@@ -1,0 +1,20 @@
+LANG = {
+    ["targetbanklabel"] = "Bank",
+    ["targetatmlabel"] = "Hæveautomat",
+    ["progressbarlabel"] = "Kort placeres...",
+    ["withdraw"] = "%s DKK hævet fra bankkontoen",
+    ["bankmoneyerror"] = "Der er ikke nok penge på bankkontoen",
+    ["walletmoneyerror"] = "Der er ikke nok penge i tegnebogen",
+    ["deposit"] = "%s DKK indsat på bankkontoen",
+    ["allmoneywalleterror"] = "Du har ingen kontanter!",
+    ["playernotfound"] = "Spiller ikke fundet!",
+    ["transfer"] = "%s DKK overført med succes",
+    -- Ui (dette er nogle indstillinger, hvis du vil lave mange ændringer, besøg index.html)
+    ["walletui"] = "Kontanter",
+    ["history-withdraw"] = "Hævningsproces",
+    ["history-deposit"] = "Indbetalingsproces",
+    ["invalid-value"] = "Ugyldig værdi",
+    ["zerovalue-error"] = "Værdien du indtaster skal være større end 0!",
+    ["history-come-transfer"] = "Indgående overførsel",
+    ["history-send-transfer"] = "Udgående overførsel",
+}

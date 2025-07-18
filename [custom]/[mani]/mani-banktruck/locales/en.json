@@ -1,0 +1,36 @@
+{
+    "Target": {
+        "OfficeEntrance": "Break Into Office",
+        "OfficeExit": "Leave Office",
+        "OfficeComputer": "Hack Computer",
+        "OfficeDocument": "Loot Document",
+        "SetupLandmine": "Setup Landmine",
+        "RemoveLandmine": "Remove Landmine",
+        "PickupLandmine": "Pickup Landmine",
+        "PlantC4": "Plant C4",
+        "LootTruck": "Loot Truck"
+    },
+    "ProgressBar": {
+        "PlantingLandmine": "Planting Landmine",
+        "RemovingLandmine": "Removing Landmine",
+        "PlantingC4": "Planting C4",
+        "LootingBanktruck": "Looting Banktruck"
+    },
+    "Notify": {
+        "SomethingWentWrong": "Something went wrong",
+        "AlreadyLooted": "This is already looted",
+        "NotEnoughCops": "Not enough cops",
+        "ExpiredDrivingPlan": "Drivingplan is expired",
+        "Cooldown": "Someone recently did this",
+        "EnteredOffice": "This heist is either active or has been completed",
+        "EnteredOfficeSuccess": "Find the documents and hack the computer"
+    },
+    "UiText": {
+        "DropLandmine": "[CTRL] Drop Landmine"
+    },
+    "Alert": {
+        "Requires": "This heist requires:",
+        "Requirements": "Landmine  \n C4 Bomb"
+    },
+    "ExpiresAt": "Expires At"
+}

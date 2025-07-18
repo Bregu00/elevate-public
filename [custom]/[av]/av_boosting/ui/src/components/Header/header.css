@@ -1,0 +1,13 @@
+.header {
+    width: 100%;
+    height: 55px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stats {
+    display: flex;
+    max-width:100px;
+}

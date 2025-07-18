@@ -1,0 +1,9 @@
+.overview {
+    position: relative;
+    display: block;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 100%;
+}

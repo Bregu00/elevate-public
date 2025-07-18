@@ -1,0 +1,13 @@
+.container {
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,47 @@
+.mainContainer {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90%;
+}
+
+.menuContainer {
+  background-color: rgba(39, 43, 54, 0.98);
+  width: 40%;
+  max-height: 90%;
+  max-width: 320px;
+  overflow: auto;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.input {
+  background-color: rgba(39, 43, 54, 0.65);
+  &:disabled,
+  &[data-disabled] {
+    color: rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(80, 80, 80, 0.35);
+    cursor: default;
+  }
+}
+
+.dropdown {
+  background-color: rgba(39, 43, 54, 0.45);
+  backdrop-filter: blur(10px);
+  max-height: 155px;
+  overflow: auto;
+}
+
+.option:hover {
+  background-color: rgba(155, 155, 155, 0.15);
+}
+
+.pill {
+  background-color: rgba(30, 30, 30, 0.6);
+  color: white;
+}

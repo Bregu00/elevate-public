@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Player</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .radio-container {
+            display: none;
+            background: linear-gradient(135deg, #2c5f5f, #1a4040);
+            border-radius: 16px;
+            padding: 20px;
+            width: 350px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            color: white;
+        }
+
+        .radio-container.visible {
+            display: block;
+        }
+
+        .song-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .album-art {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            background: #333;
+            margin-right: 15px;
+            background-size: cover;
+            background-position: center;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><rect width="60" height="60" fill="%23333"/><text x="30" y="35" text-anchor="middle" fill="%23666" font-size="12">♪</text></svg>');
+            position: relative;
+        }
+
+        .album-art.loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            margin: -10px 0 0 -10px;
+            border: 2px solid #666;
+            border-top: 2px solid #4a9eff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .song-details {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .song-details h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .youtube-icon {
+            width: 16px;
+            height: 16px;
+            background: #ff0000;
+            border-radius: 2px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .song-details p {
+            font-size: 14px;
+            color: #b0b0b0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .progress-section {
+            margin-bottom: 20px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #444;
+            border-radius: 3px;
+            margin-bottom: 8px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #4a9eff;
+            border-radius: 3px;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .time-display {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #b0b0b0;
+        }
+
+        .controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .play-button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #4a9eff;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .play-button:hover {
+            background: #3a8eef;
+        }
+
+        .play-button:disabled {
+            background: #666;
+            cursor: not-allowed;
+        }
+
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+        }
+
+        .volume-icon {
+            font-size: 16px;
+            color: #b0b0b0;
+        }
+
+        .volume-slider {
+            flex: 1;
+            height: 6px;
+            background: #444;
+            border-radius: 3px;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #4a9eff;
+            cursor: pointer;
+        }
+
+        .volume-slider::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #4a9eff;
+            cursor: pointer;
+            border: none;
+        }
+
+        .url-input-section {
+            display: flex;
+            gap: 10px;
+        }
+
+        .url-input {
+            flex: 1;
+            padding: 10px 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: white;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .url-input::placeholder {
+            color: #b0b0b0;
+        }
+
+        .play-url-button {
+            padding: 10px 16px;
+            background: #4a9eff;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .play-url-button:hover {
+            background: #3a8eef;
+        }
+
+        .play-url-button:disabled {
+            background: #666;
+            cursor: not-allowed;
+        }
+
+        .no-song {
+            text-align: center;
+            color: #b0b0b0;
+            font-style: italic;
+        }
+
+        .loading-text {
+            color: #4a9eff;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="radio-container" id="radioContainer">
+        <div class="song-info">
+            <div class="album-art" id="albumArt"></div>
+            <div class="song-details">
+                <h3 id="songTitle">
+                    <span id="titleText">Ingen aktiv sang</span>
+                    <span class="youtube-icon" id="youtubeIcon" style="display: none;">▶</span>
+                </h3>
+                <p id="artistName">Ukendt Artist</p>
+            </div>
+        </div>
+
+        <div class="progress-section">
+            <div class="progress-bar" id="progressBar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="time-display">
+                <span id="currentTime">0:00</span>
+                <span id="duration">0:00</span>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="play-button" id="playButton">
+                <span id="playIcon">▶</span>
+            </button>
+            <div class="volume-control">
+                <span class="volume-icon">🔊</span>
+                <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.01" value="0.5">
+            </div>
+        </div>
+
+        <div class="url-input-section">
+            <input type="text" class="url-input" id="urlInput" placeholder="YouTube Link">
+            <button class="play-url-button" id="playUrlButton">Spil</button>
+        </div>
+    </div>
+
+    <script>
+        let currentData = {
+            url: '',
+            playing: false,
+            volume: 0.5,
+            currentTime: 0,
+            duration: 0
+        };
+
+        let videoMetadata = {};
+        let isLoadingMetadata = false;
+
+        // DOM elements
+        const radioContainer = document.getElementById('radioContainer');
+        const songTitle = document.getElementById('titleText');
+        const artistName = document.getElementById('artistName');
+        const youtubeIcon = document.getElementById('youtubeIcon');
+        const albumArt = document.getElementById('albumArt');
+        const playButton = document.getElementById('playButton');
+        const playIcon = document.getElementById('playIcon');
+        const progressFill = document.getElementById('progressFill');
+        const currentTimeEl = document.getElementById('currentTime');
+        const durationEl = document.getElementById('duration');
+        const volumeSlider = document.getElementById('volumeSlider');
+        const urlInput = document.getElementById('urlInput');
+        const playUrlButton = document.getElementById('playUrlButton');
+        const progressBar = document.getElementById('progressBar');
+
+        // Format time helper
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        // Check if URL is YouTube
+        function isYouTubeUrl(url) {
+            return url && (url.includes('youtube.com') || url.includes('youtu.be'));
+        }
+
+        // Fetch video metadata from noembed.com
+        async function fetchVideoMetadata(url) {
+            if (!url || !isYouTubeUrl(url)) return null;
+            
+            try {
+                const response = await fetch(`https://noembed.com/embed?url=${encodeURIComponent(url)}`);
+                const data = await response.json();
+                
+                if (data.error) {
+                    console.error('NoEmbed API error:', data.error);
+                    return null;
+                }
+                
+                return {
+                    title: data.title || 'Unknown Title',
+                    author: data.author_name || 'Unknown Artist',
+                    thumbnail: data.thumbnail_url || null,
+                    provider: data.provider_name || 'YouTube'
+                };
+            } catch (error) {
+                console.error('Error fetching video metadata:', error);
+                return null;
+            }
+        }
+
+        // Update video info
+        async function updateVideoInfo(url) {
+            if (!url) {
+                videoMetadata = {};
+                return { title: 'Ingen aktiv sang', artist: 'Ukendt Artist' };
+            }
+
+            // Check if we already have metadata for this URL
+            if (videoMetadata[url]) {
+                const meta = videoMetadata[url];
+                return { 
+                    title: meta.title, 
+                    artist: meta.author, 
+                    hasYoutube: isYouTubeUrl(url),
+                    thumbnail: meta.thumbnail
+                };
+            }
+
+            // If it's a YouTube URL and we don't have metadata, fetch it
+            if (isYouTubeUrl(url) && !isLoadingMetadata) {
+                isLoadingMetadata = true;
+                
+                // Show loading state
+                songTitle.textContent = 'Loading...';
+                songTitle.className = 'loading-text';
+                artistName.textContent = 'Fetching video info...';
+                albumArt.classList.add('loading');
+                
+                const metadata = await fetchVideoMetadata(url);
+                
+                if (metadata) {
+                    videoMetadata[url] = metadata;
+                    
+                    // Update thumbnail if available
+                    if (metadata.thumbnail) {
+                        albumArt.style.backgroundImage = `url(${metadata.thumbnail})`;
+                    }
+                }
+                
+                albumArt.classList.remove('loading');
+                songTitle.className = '';
+                isLoadingMetadata = false;
+                
+                // Return the fetched data or fallback
+                return metadata ? {
+                    title: metadata.title,
+                    artist: metadata.author,
+                    hasYoutube: true,
+                    thumbnail: metadata.thumbnail
+                } : { title: 'YouTube Video', artist: 'Unknown Artist', hasYoutube: true };
+            }
+
+            // Fallback for non-YouTube URLs or when metadata is loading
+            return isYouTubeUrl(url) ? 
+                { title: 'YouTube Video', artist: 'Loading...', hasYoutube: true } :
+                { title: 'Audio Track', artist: 'Unknown Artist' };
+        }
+
+        // Update UI
+        async function updateUI() {
+            const videoInfo = await updateVideoInfo(currentData.url);
+            
+            if (!isLoadingMetadata) {
+                songTitle.textContent = videoInfo.title;
+                artistName.textContent = videoInfo.artist;
+                youtubeIcon.style.display = videoInfo.hasYoutube ? 'inline-flex' : 'none';
+                
+                // Update thumbnail if not already set
+                if (videoInfo.thumbnail && !albumArt.style.backgroundImage.includes(videoInfo.thumbnail)) {
+                    albumArt.style.backgroundImage = `url(${videoInfo.thumbnail})`;
+                } else if (!videoInfo.thumbnail && !currentData.url) {
+                    // Reset to default when no song
+                    albumArt.style.backgroundImage = "url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"60\" height=\"60\" viewBox=\"0 0 60 60\"><rect width=\"60\" height=\"60\" fill=\"%23333\"/><text x=\"30\" y=\"35\" text-anchor=\"middle\" fill=\"%23666\" font-size=\"12\">♪</text></svg>')";
+                }
+            }
+            
+            playIcon.textContent = currentData.playing ? '⏸' : '▶';
+            playButton.disabled = !currentData.url;
+            
+            const progress = currentData.duration > 0 ? (currentData.currentTime / currentData.duration) * 100 : 0;
+            progressFill.style.width = `${progress}%`;
+            
+            currentTimeEl.textContent = formatTime(currentData.currentTime);
+            durationEl.textContent = formatTime(currentData.duration);
+            
+            volumeSlider.value = currentData.volume;
+        }
+
+        // Event listeners
+        playButton.addEventListener('click', () => {
+            if (currentData.url) {
+                fetch(`https://${GetParentResourceName()}/togglePlay`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({})
+                });
+            }
+        });
+
+        // Volume control - only update on mouse release to reduce NUI callbacks
+        let isDraggingVolume = false;
+
+        volumeSlider.addEventListener('mousedown', () => {
+            isDraggingVolume = true;
+        });
+
+        volumeSlider.addEventListener('mouseup', () => {
+            if (isDraggingVolume) {
+                const volume = parseFloat(volumeSlider.value);
+                fetch(`https://${GetParentResourceName()}/setVolume`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ volume })
+                });
+                isDraggingVolume = false;
+            }
+        });
+
+        // Handle touch events for mobile/tablet compatibility
+        volumeSlider.addEventListener('touchend', () => {
+            const volume = parseFloat(volumeSlider.value);
+            fetch(`https://${GetParentResourceName()}/setVolume`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ volume })
+            });
+        });
+
+        // Also handle keyboard navigation (arrow keys)
+        volumeSlider.addEventListener('keyup', (e) => {
+            if (e.key === 'ArrowLeft' || e.key === 'ArrowRight' || e.key === 'Home' || e.key === 'End') {
+                const volume = parseFloat(volumeSlider.value);
+                fetch(`https://${GetParentResourceName()}/setVolume`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ volume })
+                });
+            }
+        });
+
+        // Remove the old volume slider event listener that was using 'input'
+
+        playUrlButton.addEventListener('click', async () => {
+            const url = urlInput.value.trim();
+            if (url) {
+                playUrlButton.disabled = true;
+                playUrlButton.textContent = 'Loading...';
+                
+                // Pre-fetch metadata for YouTube URLs
+                if (isYouTubeUrl(url)) {
+                    await fetchVideoMetadata(url);
+                }
+                
+                fetch(`https://${GetParentResourceName()}/playUrl`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ url })
+                });
+                
+                urlInput.value = '';
+                playUrlButton.disabled = false;
+                playUrlButton.textContent = 'Play';
+            }
+        });
+
+        progressBar.addEventListener('click', (e) => {
+            if (currentData.duration > 0) {
+                const rect = progressBar.getBoundingClientRect();
+                const percent = (e.clientX - rect.left) / rect.width;
+                const seekTime = percent * currentData.duration;
+                
+                fetch(`https://${GetParentResourceName()}/seekTo`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ time: seekTime })
+                });
+            }
+        });
+
+        // Close on Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                fetch(`https://${GetParentResourceName()}/close`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({})
+                });
+            }
+        });
+
+        // Handle NUI messages
+        window.addEventListener('message', (event) => {
+            const { action, data } = event.data;
+            
+            switch (action) {
+                case 'setVisible':
+                    if (data.visible) {
+                        radioContainer.classList.add('visible');
+                        currentData = { ...currentData, ...data };
+                        updateUI();
+                    } else {
+                        radioContainer.classList.remove('visible');
+                    }
+                    break;
+                    
+                case 'updateMusic':
+                    const oldUrl = currentData.url;
+                    currentData = { ...currentData, ...data };
+                    
+                    // If URL changed, update UI immediately to show new song info
+                    if (oldUrl !== currentData.url) {
+                        updateUI();
+                    } else {
+                        // Just update progress and controls for same song
+                        playIcon.textContent = currentData.playing ? '⏸' : '▶';
+                        const progress = currentData.duration > 0 ? (currentData.currentTime / currentData.duration) * 100 : 0;
+                        progressFill.style.width = `${progress}%`;
+                        currentTimeEl.textContent = formatTime(currentData.currentTime);
+                        durationEl.textContent = formatTime(currentData.duration);
+                        volumeSlider.value = currentData.volume;
+                    }
+                    break;
+            }
+        });
+
+        // Initial update
+        updateUI();
+    </script>
+</body>
+</html>

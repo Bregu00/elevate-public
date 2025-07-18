@@ -1,0 +1,493 @@
+:root {
+  --primary: rgba(45, 45, 48, 0.9);  /* Dark grey with opacity */
+  --secondary: rgba(55, 55, 58, 0.9); /* Slightly lighter grey */
+  --text: #ffffff; /* White text */
+  --text-secondary: #a0a0a0; /* Light grey text */
+  --card-bg: rgba(34, 34, 40, 0.73); /* Dark card background */
+  --card-hover: rgba(46, 52, 64, 0.74); /* Dark grey on hover with transparency */
+  --button-bg: #333; /* Dark grey button background */
+  --accent: #3760d1ad; /* Green accent */
+
+  --button-hover: #3768d1; /* Bright green on button hover */  
+  --progress-bg: rgba(34, 34, 40, 0.9); /* Dark grey progress bar */
+  --border-radius: 4px; /* Radius for rounded corners */
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+  --transition-speed: 0.3s; /* Smooth transition for animations */
+  --tab-content-height: 600px; /* Adjusted to accommodate two rows of content */
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: transparent;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text);
+  overflow: hidden;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none; /* Hide by default */
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  background-color: var(--primary);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transform: scale(0.95);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: auto; /* Allow container to size based on content */
+}
+
+.container.visible {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.header {
+  background-color: var(--secondary);
+  padding: 15px; /* Reduced padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  flex-shrink: 0;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Reduced gap */
+}
+
+.header-left i {
+  font-size: 20px; /* Smaller icon */
+  color: var(--accent);
+}
+
+.header-left h1 {
+  font-size: 18px; /* Smaller heading */
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px; /* Reduced gap */
+}
+
+.level-info {
+  font-size: 13px; /* Smaller text */
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.level-label {
+  font-weight: 500;
+}
+
+.progress-bar {
+  width: 180px; /* Smaller progress bar */
+  height: 6px; /* Thinner progress bar */
+  background-color: var(--progress-bg);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.progress {
+  height: 100%;
+  background-color: var(--accent);
+  border-radius: 3px;
+  transition: width 0.5s ease-out;
+}
+
+.refresh-info {
+  font-size: 11px; /* Smaller text */
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.refresh-time {
+  font-weight: 500;
+  color: var(--text);
+}
+
+.sub-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 15px; /* Reduced padding */
+  background-color: var(--secondary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  flex-shrink: 0;
+}
+
+.vehicle-info-box {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Reduced gap */
+  font-size: 13px; /* Smaller text */
+  color: var(--text);
+}
+
+.vehicle-info-box i {
+  color: var(--accent);
+}
+
+.vehicle-count {
+  font-weight: 500;
+}
+
+.refresh-button {
+  background-color: var(--button-bg);
+  color: var(--text);
+  border: none;
+  border-radius: var(--border-radius);
+  width: 32px; /* Smaller button */
+  height: 32px; /* Smaller button */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+}
+
+.refresh-button:hover {
+  background-color: var(--button-hover);
+}
+
+.refresh-button i {
+  font-size: 14px; /* Smaller icon */
+}
+
+.refresh-button.spinning i {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.tabs {
+  display: flex;
+  background-color: var(--secondary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  flex-shrink: 0;
+}
+
+.tab {
+  padding: 12px 20px; /* Reduced padding */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Reduced gap */
+  transition: all var(--transition-speed);
+  position: relative;
+  overflow: hidden;
+  font-size: 14px; /* Smaller text */
+}
+
+.tab:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.tab.active {
+  background-color: var(--primary);
+}
+
+.tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--accent);
+  transform: scaleX(1);
+  transition: transform 0.3s ease;
+}
+
+.tab:not(.active)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--accent);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.tab:hover::after {
+  transform: scaleX(1);
+}
+
+.tab i {
+  font-size: 14px; /* Smaller icon */
+  color: var(--accent);
+}
+
+/* Fixed height and position for all tab content */
+.tab-content {
+  display: none;
+  padding: 10px; /* Further reduced padding */
+  background-color: var(--primary);
+  height: var(--tab-content-height);
+  overflow-y: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  position: relative; /* Changed from absolute to relative */
+  visibility: hidden;
+  will-change: transform, opacity; /* Optimize for animations */
+}
+
+/* Add custom scrollbar styling */
+.tab-content::-webkit-scrollbar {
+  width: 6px; /* Thinner scrollbar */
+}
+
+.tab-content::-webkit-scrollbar-track {
+  background: var(--secondary);
+  border-radius: 3px;
+}
+
+.tab-content::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 3px;
+}
+
+.tab-content::-webkit-scrollbar-thumb:hover {
+  background: var(--button-hover);
+}
+
+.tab-content.active {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Remove the container::after that was creating extra space */
+.container::after {
+  display: none;
+}
+
+.vehicles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Even smaller cards */
+  gap: 10px; /* Further reduced gap */
+  padding-bottom: 10px; /* Add some bottom padding */
+}
+
+.vehicle-card {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  height: 100%; /* Ensure consistent height */
+  display: flex;
+  flex-direction: column;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-4px); /* Smaller hover effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  outline: 2px solid var(--accent); /* Add green outline on hover */
+}
+.vehicle-image-container {
+  width: 100%;
+  height: 150px; /* Further reduced from 180px */
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  flex-shrink: 0;
+}
+
+.vehicle-image {
+  width: 75%;
+  height: 75%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.vehicle-info {
+  padding: 8px; /* Further reduced from 10px */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.vehicle-name {
+  font-size: 14px; /* Further reduced from 15px */
+  font-weight: 500;
+  margin-bottom: 6px; /* Further reduced from 8px */
+  text-align: center;
+  color: var(--text);
+}
+
+.vehicle-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px; /* Further reduced from 8px */
+  margin-bottom: 8px; /* Further reduced from 10px */
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px; /* Further reduced from 3px */
+}
+
+.stat-label {
+  font-size: 10px; /* Further reduced from 11px */
+  color: var(--text-secondary);
+}
+
+.stat-value {
+  font-size: 12px; /* Further reduced from 13px */
+  font-weight: 500;
+  color: var(--text);
+}
+
+.buy-button {
+  width: 100%;
+  padding: 6px; /* Further reduced from 8px */
+  background-color: var(--button-bg);
+  color: var(--text);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 12px; /* Further reduced from 13px */
+  transition: background-color var(--transition-speed);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px; /* Further reduced from 6px */
+  margin-top: auto; /* Push to bottom of flex container */
+}
+
+.buy-button:hover {
+  background-color: var(--button-hover);
+}
+
+.buy-button.disabled {
+  background-color: #333;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.countdown {
+  text-align: center;
+  font-size: 11px; /* Further reduced from 12px */
+  color: #ff5252;
+  margin-top: 5px; /* Further reduced from 6px */
+}
+
+.no-vehicles {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 20px; /* Further reduced from 30px */
+  color: var(--text-secondary);
+  font-size: 14px; /* Smaller text */
+}
+
+.hidden {
+  display: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.slide-up {
+  animation: slideUp 0.3s ease forwards;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+
+  .vehicles-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .header-right {
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .progress-bar {
+    width: 100%;
+  }
+
+  .sub-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+

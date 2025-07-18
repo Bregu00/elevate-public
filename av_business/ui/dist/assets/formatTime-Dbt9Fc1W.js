@@ -1,0 +1,1 @@
+const a=e=>{const t=new Date(e*1e3),s=("0"+(t.getMonth()+1)).slice(-2),n=("0"+t.getDate()).slice(-2),o=("0"+t.getHours()).slice(-2),c=("0"+t.getMinutes()).slice(-2);return`${s}/${n} ${o}:${c}`};export{a as f};

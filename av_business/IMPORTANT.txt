@@ -1,0 +1,6 @@
+If you bought av_restaurants from Tebex but received av_business don't worry, av_business is the new version of av restaurants which has a lot more features.
+Make sure to read and follow the installation guide:
+
+Laptop installation guide: https://docs.av-scripts.com/laptop-pack-v3/av-laptop-v3
+
+Business installation guide: https://docs.av-scripts.com/laptop-pack-v3/av-business

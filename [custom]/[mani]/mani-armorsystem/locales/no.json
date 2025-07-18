@@ -1,0 +1,38 @@
+{
+    "Notify": {
+        "AlreadyWearing": "Du har allerede på deg %s",
+        "DoesntHaveJob": "Du har ikke jobben som kreves for å bruke %s",
+        "NotWearing": "Du har ikke på deg noen rustning",
+        "MaxPlates": "Du kan bare ha på deg %s plater",
+        "MaxHealth": "Din plate carrier kan ikke passe denne rustningen",
+        "NoPlates": "Du har ingen plater å fjerne",
+        "NoPlateItems": "Du har ingen plater",
+        "AlreadyDoingSomething": "Du gjør allerede noe",
+        "SomethingWentWrong": "Noe gikk galt",
+        "NotEnoughMoney": "Du har ikke nok penger",
+        "Canceled": "Avbrutt",
+        "NoBrokenPlates": "Det er ingen ødelagte plater"
+    },
+    "Keybinds": {
+        "RemovePlatesName": "Fjern rustningsplater",
+        "RemovePlatesDesc": "Fjern rustningsplater fra din plate carrier",
+        "RemoveVestName": "Fjern plate carrier",
+        "RemoveVestDesc": "Ta av din plate carrier",
+        "EquipPlateName": "Utstyr rustningsplate",
+        "EquipPlateDesc": "Utstyr beste tilgjengelige plate"
+    },
+    "ProgressBar": {
+        "PuttingOn": "Tar på %s",
+        "TakingOff": "Tar av %s",
+        "Equipping": "Utstyrer %s",
+        "RemovePlates": "Fjerner rustningsplater"
+    },
+    "NPC": {
+        "label1": "Sett inn rustningsplater",
+        "icon1": "fa-solid fa-hand-holding",
+        "label2": "Reparer plater",
+        "icon2": "fa-solid fa-screwdriver-wrench",
+        "title": "Er du sikker?",
+        "underTitle": "Pris: %s NOK"
+    }
+}

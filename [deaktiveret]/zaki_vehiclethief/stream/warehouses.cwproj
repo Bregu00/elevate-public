@@ -1,0 +1,25 @@
+<CodeWalkerProject>
+  <Name>New CodeWalker Project</Name>
+  <Version value="1" />
+  <YmapFilenames>
+    <Item>ex_exec_warehouse_placement_interior_2_int_warehouse_l_dlc_drpwarehouses_2_milo_.ymap</Item>
+    <Item>ex_exec_warehouse_placement_interior_2_int_warehouse_l_dlc_drpwarehouses_3_milo_.ymap</Item>
+    <Item>ex_exec_warehouse_placement_interior_2_int_warehouse_l_dlc_drpwarehouses_1_milo_.ymap</Item>
+    <Item>sf_int_placement_sec_interior_2_dlc_garage_drp_garage_1_milo_.ymap</Item>
+    <Item>sf_int_placement_sec_interior_2_dlc_garage_drp_garage_2_milo_.ymap</Item>
+    <Item>sf_int_placement_sec_interior_2_dlc_garage_drp_garage_3_milo_.ymap</Item>
+    <Item>sf_int_placement_sec_interior_2_dlc_garage_drp_garage_4_milo_ .ymap</Item>
+    <Item>sf_int_placement_sec_interior_2_dlc_garage_drp_garage_5_milo_.ymap</Item>
+  </YmapFilenames>
+  <YtypFilenames />
+  <YbnFilenames />
+  <YndFilenames />
+  <YnvFilenames />
+  <TrainsFilenames />
+  <ScenarioFilenames />
+  <AudioRelFilenames />
+  <YdrFilenames />
+  <YddFilenames />
+  <YftFilenames />
+  <YtdFilenames />
+</CodeWalkerProject>

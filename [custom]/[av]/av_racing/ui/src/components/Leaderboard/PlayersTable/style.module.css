@@ -1,0 +1,114 @@
+.table {
+  border-collapse: separate;
+  border-spacing: 0 6px; /* Añadir espaciado entre filas */
+}
+
+.th {
+  padding: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgb(222, 222, 222);
+  font-family: "Bebas-Regular", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.td {
+  color: rgb(196, 196, 196);
+  font-family: "Bebas-Regular", sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  background-color: #262626;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.tr {
+  border: 1px solid rgba(211, 10, 10, 0.36);
+}
+
+.control {
+  width: 100%;
+  padding: var(--mantine-spacing-xs) var(--mantine-spacing-md);
+
+  @mixin hover {
+    background-color: light-dark(
+      var(--mantine-color-gray-0),
+      var(--mantine-color-dark-6)
+    );
+  }
+}
+
+.icon {
+  width: rem(21px);
+  height: rem(21px);
+  border-radius: rem(21px);
+}
+
+.input {
+  color: rgba(237, 237, 237, 1);
+  font-family: "Bebas-Regular";
+  background-color: rgba(25, 25, 25, 1);
+  border: 1px solid rgba(255, 255, 255, 0.36);
+}
+
+.label {
+  color: rgba(237, 237, 237, 1);
+  font-family: "Bebas-Regular";
+  font-weight: 500;
+}
+
+.input:focus {
+  border: 1px solid rgba(255, 255, 255, 0.36);
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  background-color: var(--mantine-color-body);
+  transition: box-shadow 150ms ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-bottom: rem(1px) solid
+      light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-3));
+  }
+}
+
+.scrolled {
+  box-shadow: var(--mantine-shadow-sm);
+}
+
+.scrollbar {
+  height: 45vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+@media (min-height: 500px) {
+  .scrollbar {
+    height: 36vh;
+  }
+}
+
+@media (min-height: 750px) {
+  .scrollbar {
+    height: 55vh;
+  }
+}
+
+@media (min-height: 800px) {
+  .scrollbar {
+    height: 62vh;
+  }
+}
+
+@media (min-height: 950px) {
+  .scrollbar {
+    height: 68vh;
+  }
+}

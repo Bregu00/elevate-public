@@ -1,0 +1,22 @@
+{
+  "error": {
+    "missing_level": "Du har ikke det nødvendige niveau for at lave dette item.",
+    "missing_ingredients": "Mangler nødvendige materialer.",
+    "cannot_carry": "Du kan ikke bære flere af dette item.",
+    "crafting_cancelled": "Fremstilling afbrudt"
+  },
+  "success": {
+    "crafted_item": "Du har succesfuldt crafted {amount}x {item}."
+  },
+  "ui": {
+    "title": "Crafting Interface",
+    "craft_button": "Craft Item",
+    "required_materials": "Krævede Materialer",
+    "quantity": "Antal",
+    "set_max": "Sæt Maks",
+    "missing_materials": "Mangler Materialer",
+    "required": "Krævet",
+    "level_required": "Niveau Krævet",
+    "select_item": "Vælg et item for at se detajler"
+  }
+}

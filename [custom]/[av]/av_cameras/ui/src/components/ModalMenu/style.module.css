@@ -1,0 +1,81 @@
+@font-face {
+  font-family: "Satoshi-Variable";
+  src: url("../../fonts/Satoshi-Variable.ttf") format("truetype");
+}
+
+.container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.box {
+  font-family: "Satoshi-Variable";
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  position: relative;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  background-color: #262626;
+  height: auto;
+  width: fit-content;
+  min-width: 250px;
+  max-width: 50vw;
+  padding: 10px;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.modalOptions {
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.button {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  font-family: "Bebas-Regular", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.input {
+  border: solid 1px rgba(255, 255, 255, 0.1);
+}
+
+.input:focus {
+  border: solid 1px rgba(255, 255, 255, 0.1);
+}
+
+@media (min-height: 500px) {
+  .box {
+    max-height: 50vh;
+  }
+}
+
+@media (min-height: 750px) {
+  .box {
+    max-height: 60vh;
+  }
+}
+
+@media (min-height: 800px) {
+  .box {
+    max-height: 70vh;
+  }
+}
+
+@media (min-height: 950px) {
+  .box {
+    max-height: 74vh;
+  }
+}

@@ -1,0 +1,7 @@
+Citizen.CreateThread(function()
+	AddTextEntry("WCT_CBTN_GRIP", "Tactical Grip")
+	AddTextEntry("WTD_COLBATON", "The prolapse assraper rapes your ass until you collaps with a prolapse (eminem starts raping)=")
+	AddTextEntry("WTT_COLBATON", "The Telescopic Baton")
+	AddTextEntry("WTU_COLBATON", "TELESCOPIC BATON")
+	AddTextEntry("WT_COLBATON", "Telescopic Baton")
+end)

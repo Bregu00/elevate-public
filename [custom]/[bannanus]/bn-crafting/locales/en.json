@@ -1,0 +1,23 @@
+{
+    "error": {
+      "missing_level": "You do not have the required level to craft this item.",
+      "missing_ingredients": "Missing required materials.",
+      "cannot_carry": "You cannot carry more of this item.",
+      "crafting_cancelled": "Crafting cancelled"
+    },
+    "success": {
+      "crafted_item": "You successfully crafted {amount}x {item}."
+    },
+    "ui": {
+      "title": "Crafting Interface",
+      "craft_button": "Craft Item",
+      "required_materials": "Required Materials",
+      "quantity": "Quantity",
+      "set_max": "Set Max",
+      "missing_materials": "Missing Materials",
+      "required": "Required",
+      "level_required": "Level Required",
+      "select_item": "Select an item to view details"
+    }
+}
+  

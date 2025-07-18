@@ -1,0 +1,23 @@
+{
+    "error": {
+      "missing_level": "Du hast nicht das erforderliche Level, um dieses Item herzustellen.",
+      "missing_ingredients": "Benötigte Materialien fehlen.",
+      "cannot_carry": "Du kannst nicht mehr von diesem Item tragen.",
+      "crafting_cancelled": "Herstellung abgebrochen"
+    },
+    "success": {
+      "crafted_item": "Du hast erfolgreich {amount}x {item} hergestellt."
+    },
+    "ui": {
+      "title": "Herstellungsinterface",
+      "craft_button": "Item Herstellen",
+      "required_materials": "Benötigte Materialien",
+      "quantity": "Menge",
+      "set_max": "Max setzen",
+      "missing_materials": "Fehlende Materialien",
+      "required": "Benötigt",
+      "level_required": "Erforderliches Level",
+      "select_item": "Wähle ein Item, um Details zu sehen"
+    }
+}
+  

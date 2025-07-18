@@ -1,0 +1,62 @@
+@font-face {
+  font-family: "Satoshi Variable";
+  src: url("../../fonts/Satoshi-Variable.ttf") format("truetype");
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 20%; /* Adjust width as needed */
+  max-width: 200px;
+  color: white; /* Navbar text color */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.groupName {
+  font-family: "Satoshi Variable";
+  font-size: 14px;
+  text-align: left;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #262626; /* Example background color */
+  width: 100%;
+  border: solid 1px rgba(255, 255, 255, 0.1);
+  margin-bottom: 1.25vh;
+}
+
+.footer:hover {
+  background-color: rgba(45, 45, 45, 1);
+  cursor: pointer;
+  border: solid 1px rgba(255, 255, 255, 0.25);
+  .iconBox {
+    background-color: rgba(75, 75, 75, 1);
+  }
+}
+
+.iconBox {
+  display: flex;
+  background-color: #343434;
+  border-radius: 60px;
+  height: 32px;
+  width: 32px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  font-family: "Satoshi Variable";
+  font-size: 14px;
+}
+
+.groupList {
+  max-height: 80%;
+  overflow: auto;
+}

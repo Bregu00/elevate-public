@@ -1,0 +1,8 @@
+{
+    "channel": "Channel",
+    "toggleClick": "Toggle Click",
+    "channelList": "Previous Channels",
+    "volume": "Volume",
+    "noPermission": "You do not have access to this radio",
+    "channelAdded": "Channel %s changed"
+}

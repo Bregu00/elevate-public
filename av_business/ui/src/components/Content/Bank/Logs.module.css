@@ -1,0 +1,19 @@
+@media (min-height: 700px) {
+    .logContainer {
+        height: calc(65%)
+    }
+}
+
+@media (min-height: 900px) {
+    .logContainer {
+        height: calc(80%)
+    }
+}
+
+.logContainer {
+    overflow: auto;
+}
+
+.option:hover {
+    background-color: rgba(155, 155, 155, 0.15);
+}

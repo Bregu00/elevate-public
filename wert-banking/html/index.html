@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Modern Banking</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body style="background-color: transparent !important">
+    
+    <div id="app">
+        <!-- Header -->
+        <div class="bank-header">
+            <div class="bank-logo">FLEECA<span class="logo-accent">BANK</span></div>
+            <div class="user-info">
+                <div class="user-name" id="player-name">John Doe</div>
+                <div class="wallet-balance" id="wallet-balance">Kontanter: 5,000 DKK</div>
+            </div>
+            <i id="exit" class="fa-solid fa-xmark"></i>
+        </div>
+        
+        <!-- Main content -->
+        <div class="bank-content">
+            <!-- Left panel - Account info and operations -->
+            <div class="left-panel">
+                <!-- Bank card with integrated balance -->
+                <div class="bank-card">
+                    <div class="card-top">
+                        <img class="card-chip" src="./chip.png" alt="Chip">
+                        <img class="card-logo" src="./visalogo.png" alt="Visa">
+                    </div>
+                    <div class="card-number" id="card-number">**** **** **** 1234</div>
+                    <div class="card-balance">
+                        <div class="card-balance-label">Nuværende Balance</div>
+                        <div class="card-balance-amount" id="account-balance">100,000.00 DKK</div>
+                    </div>
+                    <div class="card-expiry">EXP: 12/25</div>
+                </div>
+                
+                <!-- Operations -->
+                <div class="operations-container">
+                    <!-- Deposit/Withdraw -->
+                    <div class="operation-row">
+                        <div class="operation-input">
+                            <input type="number" id="bank-withdraw-amount" class="form-input" placeholder="Indsæt beløb" min="0">
+                            <button id="withdraw" class="action-btn deposit-btn">
+                                <i class="fas fa-arrow-up"></i> Indsæt
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="operation-row">
+                        <div class="operation-input">
+                            <input type="number" id="bank-deposit-amount" class="form-input" placeholder="Hæv beløb" min="0">
+                            <button id="deposit" class="action-btn withdraw-btn">
+                                <i class="fas fa-arrow-down"></i> Hæv
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Deposit all button -->
+                    <div class="deposit-all-btn hepsiniyatir">
+                        <i class="fas fa-wallet"></i> Indsæt alle kontanter
+                    </div>
+                    
+                    <!-- Transfer -->
+                    <div class="transfer-section">
+                        <div class="section-title">Overfør penge</div>
+                        <div class="operation-row">
+                            <div class="operation-input">
+                                <input type="number" id="bank-id-amount" class="form-input" placeholder="Modtager ID" min="0">
+                            </div>
+                        </div>
+                        <div class="operation-row">
+                            <div class="operation-input">
+                                <input type="number" id="bank-send-amount" class="form-input" placeholder="Overfør beløb" min="0">
+                                <button id="sendmoney" class="action-btn transfer-btn">
+                                    <i class="fas fa-paper-plane"></i> Send
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right panel - Transaction history -->
+            <div class="right-panel">
+                <div class="transaction-history">
+                    <div class="history-title">
+                        <i class="fas fa-history"></i> Seneste transaktioner
+                    </div>
+                    <div id="historydetail" class="history-list">
+                        <!-- Transaction items will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Notification -->
+        <div class="notification" id="notification">
+            <i class="notification-icon fas fa-info-circle"></i>
+            <span class="notification-message">Notification message</span>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+{
+    "cchat": {
+        "input": "Press the ALT key to activate the mouse 🖱️"
+    },
+    "gchat": {
+        "title": "General Chat",
+        "input": "💬 write something...",
+        "wait": "🛑 please wait...",
+        "time": {
+            "null": "Unknown",
+            "invdate": "Invalid date",
+            "now": "Just now",
+            "minutes": "minutes ago",
+            "hours": "hours ago",
+            "days": "days ago",
+            "invformat": "Invalid date format"
+        },
+        "profileSettings": {
+            "title": "Profile Image",
+            "placeholder": "URL of image",
+            "save": "Profile image successfully saved",
+            "warning": "Please enter a valid image URL. The URL should end with .jpg or .png"
+        }
+    },
+    "settings": {
+        "title": "Settings",
+        "settings1": {
+            "title": "Positioning",
+            "desc": "When you press the button, the positioning is activated and you can grab and drag the chat, after positioning it where you want, press the button again"
+        },
+        "settings2": {
+            "title": "Colour Palette",
+            "desc": "You can use the colour palette to change the default colours"
+        },
+        "settings3": {
+            "title": "Notifications",
+            "desc": "If you do not want to receive chat window notifications, you can switch this off"
+        },
+        "settings4": {
+            "title": "Sounds",
+            "desc": "You can switch this off the typing sound and other sounds"
+        },
+        "settings5": {
+            "title": "Spoiler Mode",
+            "desc": "Tick this if you want to find all gifs as spoilers so you don't get any surprises"
+        },
+        "settings6": {
+            "title": "Reset Settings",
+            "desc": "Revert and reset all settings"
+        },
+        "settings7": {
+            "title": "Scale Adjustment",
+            "desc": "Here you can adjust the scale of the chat for yourself"
+        }
+    }
+}

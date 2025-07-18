@@ -1,0 +1,8 @@
+{
+    "channel": "Kanal",
+    "toggleClick": "Toggle Click",
+    "channelList": "Tidligere Kanaler",
+    "volume": "Lydstyke",
+    "noPermission": "Du har ikke adgang til denne radio",
+    "channelAdded": "Kanal %s skiftet"
+}

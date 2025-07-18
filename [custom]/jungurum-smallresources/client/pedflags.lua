@@ -1,0 +1,8 @@
+CreateThread(function()
+    lib.onCache('ped', function(ped, oldPed)
+        SetPedConfigFlag(ped, 380, true)
+        SetPedConfigFlag(ped, 381, true)
+        SetEntityMaxHealth(ped, 200)
+        SetPedCanLosePropsOnDamage(ped, false)
+    end)
+end)

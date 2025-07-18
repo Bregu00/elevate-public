@@ -1,0 +1,38 @@
+{
+    "Notify": {
+        "AlreadyWearing": "You are already wearing %s",
+        "DoesntHaveJob": "You don't have the job to use %s",
+        "NotWearing": "You are not wearing any armor",
+        "MaxPlates": "You can only wear %s plates",
+        "MaxHealth": "Your plate carrier cannot fit this armor",
+        "NoPlates": "You don't have any plates to remove",
+        "NoPlateItems": "You don't have any plates",
+        "AlreadyDoingSomething": "You are already doing something",
+        "SomethingWentWrong": "Something went wrong",
+        "NotEnoughMoney": "You don't have enough money",
+        "Canceled": "Canceled",
+        "NoBrokenPlates": "There are no broken plates"
+    },
+    "Keybinds": {
+        "RemovePlatesName": "Remove Armor Plates",
+        "RemovePlatesDesc": "Remove Armor Plates From Your Plate Carrier",
+        "RemoveVestName": "Remove Plate Carrier",
+        "RemoveVestDesc": "Take Off Your Plate Carrier",
+        "EquipPlateName": "Equip Armor Plate",
+        "EquipPlateDesc": "Equip Best Available Plate",
+    },
+    "ProgressBar": {
+        "PuttingOn": "Putting On %s",
+        "TakingOff": "Taking Off %s",
+        "Equipping": "Equipping %s",
+        "RemovePlates": "Removing Armor Plates",
+    },
+    "NPC": {
+        "label1": "Insert Armor Plates",
+        "icon1": "fa-solid fa-hand-holding",
+        "label2": "Repair",
+        "icon2": "fa-solid fa-screwdriver-wrench",
+        "title": "Are you sure?",
+        "underTitle": "Total price: $%s"
+    }
+}

@@ -1,0 +1,61 @@
+@font-face {
+  font-family: "Bebas-Regular";
+  src: url("../../fonts/Bebas-Regular.ttf") format("truetype");
+}
+
+.footer {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 2.75%;
+}
+
+.control {
+  border: 1px solid rgba(175, 175, 175, 0.1);
+  &:disabled {
+    cursor: default;
+  }
+}
+
+.input {
+  border: 1px solid rgba(175, 175, 175, 0.1);
+  &:disabled {
+    cursor: default;
+  }
+}
+
+.crewBox {
+  background-color: #262626;
+  padding: 20px;
+  width: fit-content;
+  border: 0.9px solid rgba(255, 255, 255, 0.26);
+}
+
+.crewName {
+  color: rgb(237, 237, 237);
+  font-family: "Bebas-Regular";
+  font-size: 30.49px;
+  font-weight: 400;
+  line-height: 2rem;
+}
+
+.racers {
+  font-family: "Bebas-Regular";
+  font-size: 21px;
+  font-weight: 10;
+  line-height: 2rem;
+  display: flex;
+  background: rgba(56, 56, 56, 1);
+  width: fit-content;
+  padding: 6px 10px 6px 8px;
+  text-align: center;
+  align-items: center;
+  margin-top: 4px;
+}
+.save {
+  font-family: "Bebas-Regular";
+  font-size: 21px;
+  font-weight: 10;
+  line-height: 2rem;
+}

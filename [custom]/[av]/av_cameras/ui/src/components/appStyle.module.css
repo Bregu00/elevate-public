@@ -1,0 +1,47 @@
+.app {
+  position: absolute;
+  background-image: url("/background.png");
+  background-size: cover;
+  width: calc(100%);
+  height: calc(100%);
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  position: absolute;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  margin-top: 25vh;
+}
+
+.main {
+  position: absolute;
+  display: flex;
+  width: 100%;
+}
+
+@media (min-height: 500px) {
+  .main {
+    height: 85%;
+  }
+}
+
+@media (min-height: 750px) {
+  .main {
+    height: 91%;
+  }
+}
+
+@media (min-height: 800px) {
+  .main {
+    height: 91%;
+  }
+}
+
+@media (min-height: 950px) {
+  .main {
+    height: 92%;
+  }
+}

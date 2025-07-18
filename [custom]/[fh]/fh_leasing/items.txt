@@ -1,0 +1,30 @@
+	['simcard'] = {
+		label = 'Simkort',
+		weight = 150,
+		stack = false,
+	},
+
+	['drugphone'] = {
+		label = 'Krypteret Mobil',
+		weight = 150,
+		stack = false,
+		degrade = 84320,
+		client = {
+			export = "fh_drugphone.UsePhoneItem",
+
+		},
+		buttons = {
+			{
+				label = 'Indsæt Simkort',
+				action = function(slot)
+					TriggerEvent("fh_drugphone:InsertSimcard", slot)
+				end
+			},
+			{
+				label = 'Fjern Simkort',
+				action = function(slot)
+					TriggerEvent("fh_drugphone:RemoveSimcard", slot)
+				end
+			},
+		},
+	},

@@ -1,0 +1,146 @@
+{
+  "welcome": "Welcome",
+  "business": "Business",
+  "save": "Save",
+  "close": "Close",
+  "confirm": "Confirm",
+  "cancel": "Cancel",
+  "amount": "Amount",
+  "overview_icon": "Overview",
+  "employees_icon": "Employees",
+  "bank_icon": "Bank",
+  "menu_icon": "Menu",
+  "applications_icon": "Applications",
+  "settings_icon": "Settings",
+  "blip_on": "Turn on blip",
+  "blip_off": "Remove blip",
+  "ingredients": "Ingredients",
+  "price": "Price",
+  "order": "Order",
+  "filter": "Filter",
+  "type": "Type",
+  "empty": "No items to display...",
+  "overview": {
+    "todayOrders": "Today's Orders",
+    "todayIncome": "Today's Income",
+    "totalEmployees": "Total Employees",
+    "availableFunds": "Available Funds",
+    "todayOverview": "Today's Overview",
+    "employeeOfMonth": {
+      "title": "Employee of the month",
+      "description": "Been on duty %s hours this month."
+    },
+    "ratedByCustomers": {
+      "title": "Rated by customers",
+      "0": "Encourage your customers to leave a review!.",
+      "1": "Poor. Significant improvements are needed.",
+      "2": "Fair. Consider improving customer satisfaction.",
+      "3": "Good. There are some areas for improvement.",
+      "4": "Great! Your business is well appreciated.",
+      "5": "Excellent! Your customers love your business."
+    },
+    "completedOrders": {
+      "title": "Completed orders",
+      "more": "more compared to last month",
+      "less": "less compared to last month"
+    },
+    "topDish": {
+      "title": "Today's Top Dish",
+      "description": "Sold %s times."
+    },
+    "topEmployee": {
+      "title": "Today's Top Employee",
+      "description": "Worked %s hours today."
+    }
+  },
+  "employees": {
+    "name": "Name",
+    "grade": "Grade",
+    "generated": "Generated",
+    "lastSeen": "Last Seen",
+    "actions": "Actions",
+    "search": "Search Employee",
+    "hire": "Hire Closest Player",
+    "bonus": "Send Bonus",
+    "phone": "Phone",
+    "email": "Email",
+    "photo": "Photo",
+    "permissions": "Permissions",
+    "fireEmployee": "Fire Employee",
+    "fireText": "Are you sure you want to fire this employee?"
+  },
+  "bank": {
+    "availableFunds": "Available Funds",
+    "monthlyGoal": "Monthly Goal",
+    "edit_goal": "Edit Goal",
+    "goal_text": "Your monthly goal",
+    "deposit": "Deposit",
+    "withdraw": "Withdraw",
+    "add_button": "Add Funds",
+    "add_text": "Amount to deposit",
+    "remove_button": "Withdraw Funds",
+    "remove_text": "Amount to withdraw",
+    "latest": "Latest Transactions",
+    "empty": "No Transactions Found",
+    "description": "Description",
+    "employee": "Employee",
+    "date": "Date"
+  },
+  "menu": {
+    "product": "Product",
+    "description": "Description",
+    "suggestedPrice": "Suggested Price",
+    "add": "Add Product",
+    "edit_header": "Edit Product",
+    "delete_header": "Delete Product",
+    "delete_text": "Are you sure you want to delete %s?",
+    "name": "Product Name",
+    "namePlaceholder": "Pick an existing one or make a new product",
+    "isNew": "New Product...",
+    "productDescription": "Product Description",
+    "descriptionPlaceholder": "Max 40 characters",
+    "productImage": "Product Image",
+    "imagePlaceholder": "Use a valid URL (imgur is not supported)",
+    "productType": "Product Type",
+    "animation": "Animation"
+  },
+  "appplications": {
+    "header": "Application(s)",
+    "open": "Applications Open",
+    "closed": "Applications Closed"
+  },
+  "settings": {
+    "header": "Discord Logs",
+    "webhook": "Discord Webhook",
+    "placeholder": "Your Webhook goes here"
+  },
+  "cashier": {
+    "header": "Cashier Panel",
+    "products": "Products",
+    "total": "Total",
+    "add": "Add Product",
+    "return": "Return",
+    "addCart": "Add to cart",
+    "complete": "Complete Order",
+    "waiting": "Waiting for customer payment...",
+    "empty": "No products to display."
+  },
+  "orders": {
+    "header": "Pending Orders",
+    "empty": "No pending orders.",
+    "complete": "Mark as complete",
+    "queue": "Add to queue"
+  },
+  "admin": {
+    "header": "Admin Panel",
+    "newZone": "New Zone",
+    "zones": "Zones",
+    "identifier": "Identifier",
+    "job": "Job",
+    "teleport": "Teleport",
+    "delete": "Delete",
+    "deleteHeader": "Delete zone",
+    "deleteText": "Are you sure you want to delete this zone?",
+    "edit": "Edit"
+  }
+}

@@ -1,0 +1,38 @@
+{
+    "Notify": {
+        "AlreadyWearing": "Du har allerede en %s på",
+        "DoesntHaveJob": "Du har ikke det rette job for at bruge %s",
+        "NotWearing": "Du har ikke noget armor på",
+        "MaxPlates": "Du kan kun have %s plader på",
+        "MaxHealth": "Din plate carrier kan ikke passe dette armor",
+        "NoPlates": "Du har ikke nogen plates at fjerne",
+        "NoPlateItems": "Du har ikke nogen plates",
+        "AlreadyDoingSomething": "Du laver allerede noget",
+        "SomethingWentWrong": "Noget gik galt",
+        "NotEnoughMoney": "Du har ikke nok penge",
+        "Canceled": "Annulleret",
+        "NoBrokenPlates": "Der er ingen ødelagte plates"
+    },
+    "Keybinds": {
+        "RemovePlatesName": "Fjern Armor Plates",
+        "RemovePlatesDesc": "Fjern Armor Plates Fra Din Plate Carrier",
+        "RemoveVestName": "Fjern Plate Carrier",
+        "RemoveVestDesc": "Tag Din Plate Carrier Af",
+        "EquipPlateName": "Udstyr Armor Plate",
+        "EquipPlateDesc": "Udstyr Bedste Tilgængelige Plate",
+    },
+    "ProgressBar": {
+        "PuttingOn": "Tager %s på",
+        "TakingOff": "Tager %s af",
+        "Equipping": "Bruger %s",
+        "RemovePlates": "Fjerner Armor Plates",
+    },
+    "NPC": {
+        "label1": "Indsæt Armor Plates",
+        "icon1": "fa-solid fa-hand-holding",
+        "label2": "Reparer Plates",
+        "icon2": "fa-solid fa-screwdriver-wrench",
+        "title": "Er du sikker?",
+        "underTitle": "Pris: %s DKK"
+    }
+}

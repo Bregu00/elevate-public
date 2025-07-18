@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warehouse UI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="header">
+                <div class="header-left">
+                    <i class="fas fa-warehouse"></i>
+                    <h1>DIN FREMGANG</h1>
+                </div>
+                <div class="header-right">
+                    <div class="level-info">
+                        <span class="level-label">MASTER - </span>
+                        <span class="level-progress">1540/2000</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%;"></div>
+                    </div>
+                    <div class="refresh-info">
+                        <span>Næste refresh om:</span>
+                        <span class="refresh-time">05:23 00:01</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sub-header">
+                <div class="warehouse-info-box">
+                    <i class="fas fa-box"></i>
+                    <span>Kasser i Varehus: <span class="crate-count">0/10</span></span>
+                </div>
+                <button id="refresh-button" class="refresh-button">
+                    <i class="fas fa-sync-alt"></i>
+                </button>
+            </div>
+            
+            <div class="tabs">
+                <div class="tab active" data-tab="available">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Tilgængelige</span>
+                </div>
+                <div class="tab" data-tab="warehouse">
+                    <i class="fas fa-box-open"></i>
+                    <span>Dit Varehus</span>
+                </div>
+                <div class="tab" data-tab="truck">
+                    <i class="fas fa-truck"></i>
+                    <span>Lastbil</span>
+                </div>
+            </div>
+            
+            <div class="tab-content active" id="available-content">
+                <div class="crates-grid">
+                    <!-- Available crates will be dynamically inserted here -->
+                </div>
+            </div>
+            
+            <div class="tab-content" id="warehouse-content">
+                <div class="crates-grid">
+                    <!-- Warehouse crates will be dynamically inserted here -->
+                </div>
+            </div>
+            
+            <div class="tab-content" id="truck-content">
+                <div class="truck-options">
+                    <!-- Truck options will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
+

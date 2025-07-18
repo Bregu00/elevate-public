@@ -1,0 +1,38 @@
+{
+    "Notify": {
+        "AlreadyWearing": "Du trägst bereits %s",
+        "DoesntHaveJob": "Du hast nicht den richtigen Job, um %s zu benutzen",
+        "NotWearing": "Du trägst keine Rüstung",
+        "MaxPlates": "Du kannst nur %s Platten tragen",
+        "MaxHealth": "Dein Plattenträger kann diese Rüstung nicht aufnehmen",
+        "NoPlates": "Du hast keine Platten zum Entfernen",
+        "NoPlateItems": "Du hast keine Platten",
+        "AlreadyDoingSomething": "Du machst bereits etwas",
+        "SomethingWentWrong": "Etwas ist schief gelaufen",
+        "NotEnoughMoney": "Du hast nicht genug Geld",
+        "Canceled": "Abgebrochen",
+        "NoBrokenPlates": "Es gibt keine kaputten Platten"
+    },
+    "Keybinds": {
+        "RemovePlatesName": "Rüstungsplatten entfernen",
+        "RemovePlatesDesc": "Rüstungsplatten von deinem Plattenträger entfernen",
+        "RemoveVestName": "Plattenträger entfernen",
+        "RemoveVestDesc": "Nimm deinen Plattenträger ab",
+        "EquipPlateName": "Rüstungsplatte ausrüsten",
+        "EquipPlateDesc": "Beste verfügbare Platte ausrüsten"
+    },
+    "ProgressBar": {
+        "PuttingOn": "Anziehen %s",
+        "TakingOff": "Ausziehen %s",
+        "Equipping": "Ausrüsten %s",
+        "RemovePlates": "Rüstungsplatten entfernen"
+    },
+    "NPC": {
+        "label1": "Rüstungsplatten einsetzen",
+        "icon1": "fa-solid fa-hand-holding",
+        "label2": "Platten reparieren",
+        "icon2": "fa-solid fa-screwdriver-wrench",
+        "title": "Bist du sicher?",
+        "underTitle": "Preis: %s EUR"
+    }
+}

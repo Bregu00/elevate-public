@@ -1,0 +1,146 @@
+@font-face {
+  font-family: "Bebas-Regular";
+  src: url("../../fonts/Bebas-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Satoshi Variable";
+  src: url("../../fonts/Satoshi-Variable.ttf") format("truetype");
+}
+
+.flagBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(41, 41, 41);
+  width: 63.63px;
+  height: 63.63px;
+  top: 314.36px;
+  left: 40px;
+  gap: 0px;
+  border-radius: 1.5px 0px 0px 0px;
+  opacity: 0px;
+}
+
+.title {
+  font-family: "Bebas-Regular";
+  font-size: 34.71px;
+  font-weight: 400;
+  line-height: 32.66px;
+  text-align: left;
+}
+
+.subheader {
+  font-family: "Satoshi Variable";
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 15.71px;
+  font-weight: lighter;
+  line-height: 32.66px;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.input {
+  color: rgba(237, 237, 237, 1);
+  font-family: "Bebas-Regular";
+  background-color: rgba(25, 25, 25, 1);
+  border: 1px solid rgba(255, 255, 255, 0.36);
+}
+
+.label {
+  color: rgba(237, 237, 237, 1);
+  font-family: "Bebas-Regular";
+  font-weight: 500;
+}
+
+.input:focus {
+  border: 1px solid rgba(255, 255, 255, 0.36);
+}
+
+.dropdown {
+  font-family: "Bebas-Regular";
+  background-color: rgba(25, 25, 25, 1);
+  border: 1px solid rgba(255, 255, 255, 0.36);
+}
+
+.trackCard {
+  background-color: rgba(41, 41, 41, 1);
+  min-width: 270px;
+  max-width: 270px;
+  min-height: 150px;
+  max-height: 150px;
+  box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 0px;
+}
+
+.trackName {
+  color: rgba(237, 237, 237, 1);
+  font-family: "Bebas-Regular";
+  font-size: 18px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.badge {
+  font-family: "Bebas-Regular";
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 12px;
+  border-radius: 0px;
+}
+
+.description {
+  font-family: "Satoshi Variable";
+  font-size: 12px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.distance {
+  color: rgba(190, 190, 190, 1);
+  font-family: "Bebas-Regular";
+  font-size: 10px;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.distanceData {
+  color: rgba(190, 190, 190, 1);
+  font-family: "Bebas-Regular";
+  font-size: 12px;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.container {
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+@media (min-height: 500px) {
+  .container {
+    height: 36vh;
+  }
+}
+
+@media (min-height: 750px) {
+  .container {
+    height: 55vh;
+  }
+}
+
+@media (min-height: 800px) {
+  .container {
+    height: 67vh;
+  }
+}
+
+@media (min-height: 950px) {
+  .container {
+    height: 67vh;
+  }
+}

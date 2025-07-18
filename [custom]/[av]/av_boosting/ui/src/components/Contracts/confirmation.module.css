@@ -1,0 +1,34 @@
+.container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    width: 100%;
+    height: 70%;
+    overflow: auto;
+    z-index: 2;
+}
+
+.box {
+    background-color: rgba(36, 44, 55, 0.45);
+    backdrop-filter: blur(10px);
+    width: 355px;
+    box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.05);
+    border: solid 1.25px rgba(80, 80, 80, 0.75);
+    border-radius: 4px;
+    margin: auto;
+}
+
+.input {
+    background-color: rgba(36, 44, 55, 0.25);
+}
+
+.dropdown {
+    background-color: rgba(36, 44, 55, .85);
+}
+
+.option:hover {
+    background-color: rgba(255,255,255,0.2);
+}

@@ -1,0 +1,68 @@
+@font-face {
+  font-family: "Bebas-Regular";
+  src: url("../../fonts/Bebas-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Satoshi Variable";
+  src: url("../../fonts/Satoshi-Variable.ttf") format("truetype");
+}
+
+.header {
+  background-color: rgba(217, 217, 217, 0.04);
+}
+
+.avatarBox {
+  display: flex;
+  background-color: #292929;
+  width: 73.63px;
+  height: 73.63px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-family: "Bebas-Regular", sans-serif;
+  font-size: 34.59px;
+  font-weight: 400;
+  line-height: 41.51px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.crew {
+  font-family: "Satoshi Variable";
+  font-size: 15.2px;
+  font-weight: 500;
+  line-height: 20.52px;
+  letter-spacing: 0.16em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.track {
+  background-color: #292929;
+  border: 0.83px solid rgba(255, 255, 255, 0.29);
+  border-radius: 2px;
+  padding: 0;
+}
+
+.trackLabel {
+  font-family: "Bebas-Regular", sans-serif;
+  font-size: 18px;
+  font-weight: 100;
+  line-height: 24.49px;
+  text-align: left;
+  padding: 14px;
+}
+
+.thumb {
+  position: absolute;
+  background: rgba(52, 52, 52, 1);
+  border: 0.83px solid rgba(255, 255, 255, 0);
+  gap: 0;
+  padding: 0;
+  height: 100%;
+  width: 34px;
+}

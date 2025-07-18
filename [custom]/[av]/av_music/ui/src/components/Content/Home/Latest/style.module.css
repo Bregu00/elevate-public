@@ -1,0 +1,23 @@
+.container {
+  position: absolute;
+  width: calc(100% - 190px);
+  z-index: 0;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  background-color: #262626;
+  transition: box-shadow 150ms ease;
+  z-index: 0;
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-bottom: rem(1px) solid
+      light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-3));
+  }
+}

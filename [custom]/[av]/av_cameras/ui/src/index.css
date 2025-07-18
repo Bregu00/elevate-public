@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* background: url("https://cdn.discordapp.com/attachments/753595383757668403/1267613475103051948/image.png?ex=66ab66cb&is=66aa154b&hm=76b8bb86e29bd85257413b78d2089b817fe2001c2335c2b4514c7e2fabd1ca72&")
+    no-repeat center center fixed;
+  background-size: cover; */
+  box-sizing: border-box;
+  background-color: transparent !important;
+  font-family: "Satoshi-Variable", sans-serif;
+  user-select: none;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(120, 120, 120, 0.15);
+}

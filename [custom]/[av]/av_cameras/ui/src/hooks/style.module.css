@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "Satoshi Variable";
+  src: url("../../fonts/Satoshi-Variable.ttf") format("truetype");
+}
+
+.container {
+  background-color: rgb(24, 24, 24);
+  display: block;
+  padding: 6px;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-family: "Satoshi Variable";
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+}
+
+.timer {
+  font-family: "Satoshi Variable";
+  font-size: 14px;
+}

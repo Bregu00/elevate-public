@@ -1,0 +1,22 @@
+.container {
+    max-height: 98%;
+    overflow: auto;
+    margin-top: 10px;
+
+}
+
+.contract {
+    display: flex;
+    background-color: rgba(36, 44, 55, 0.25);
+    min-height: 70px;
+    border: solid 1.25px rgba(255,255,255,0.15);
+    border-radius: 4px;
+    box-shadow: 1px 2px 10px rgba(0,0,0,0.1);
+    padding: 6px;
+}
+
+.avatarClass {
+    background-color: rgba(215,215,215,0.1);
+    border: solid 1.5px rgba(255, 255, 255, 0.5);
+    
+}

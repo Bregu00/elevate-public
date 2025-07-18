@@ -1,0 +1,38 @@
+fx_version 'cerulean'
+game 'gta5'
+lua54 'yes'
+
+author 'ManiMods'
+description 'Biltyv ven'
+version '2.0.0'
+
+-- ui_page 'http://localhost:5173/'
+ui_page 'web/build/index.html'
+
+client_scripts {
+    'client/*.lua',
+}
+
+server_scripts {   
+    '@es_extended/imports.lua',
+    "@mysql-async/lib/MySQL.lua", 
+    'server/*.lua',
+    'open/sv_util.lua'
+}
+
+shared_scripts {
+    '@ox_lib/init.lua',
+}
+
+files {
+    'config.lua',
+    'open/cl_util.lua',
+    'web/build/index.html',
+    'web/build/**/*'
+}
+
+escrow_ignore {
+    'config.lua',
+    'open/*.lua',
+}
+dependency '/assetpacks'

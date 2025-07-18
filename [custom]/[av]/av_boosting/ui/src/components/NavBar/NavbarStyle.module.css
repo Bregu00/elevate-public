@@ -1,0 +1,8 @@
+.navbar {
+    display: block;
+    width: 100%;
+}
+
+.tab:hover {
+    background-color: rgba(100,100,100,0.25);
+}
